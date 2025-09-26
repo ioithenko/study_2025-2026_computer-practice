@@ -47,6 +47,8 @@ format:
     output-ext: html
     theme: beige
     logo: _resources/image/logo_rudn.png
+  variables:
+    table-of-contents: false
 ---
 
 # Докладчик
