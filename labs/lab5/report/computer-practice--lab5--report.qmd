@@ -1,67 +1,142 @@
 ---
 ## Author
 author:
-  name: Дмитрий Сергеевич Кулябов
-  degrees: DSc
-  orcid: 0000-0002-0877-7063
-  email: kulyabov-ds@rudn.ru
+  name: Ищенко Ирина Олеговна
+  orcid: 0009-0002-0659-9651
+  email: 1132226529@rudn.ru
   affiliation:
     - name: Российский университет дружбы народов
       country: Российская Федерация
       postal-code: 117198
       city: Москва
       address: ул. Миклухо-Маклая, д. 6
-
 ## Title
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
+title: "Отчёт по лабораторной работе №5"
+subtitle: "Компьютерный практикум по статистическому анализу данных"
 license: "CC BY"
+## Generic options
+lang: ru-RU
+number-sections: true
+toc: true
+toc-title: "Содержание"
+toc-depth: 2
+## Crossref customization
+crossref:
+  lof-title: "Список иллюстраций"
+  lot-title: "Список таблиц"
+  lol-title: "Листинги"
+## Bibliography
+bibliography:
+  - bib/cite.bib
+csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+## Formats
+format:
+### Pdf output format
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: false
+    toc-depth: 2
+    lof: true # List of figures
+    lot: false # List of tables
+#### Document
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 12pt
+    linestretch: 1.5
+#### Language
+    babel-lang: russian
+    babel-otherlangs: english
+#### Biblatex
+    cite-method: biblatex
+    biblio-style: gost-numeric
+    biblatexoptions:
+      - backend=biber
+      - langhook=extras
+      - autolang=other*
+#### Misc options
+    csquotes: true
+    indent: true
+    header-includes: |
+      \usepackage{indentfirst}
+      \usepackage{float}
+      \floatplacement{figure}{H}
+      \usepackage[math,RM={Scale=0.94},SS={Scale=0.94},SScon={Scale=0.94},TT={Scale=MatchLowercase,FakeStretch=0.9},DefaultFeatures={Ligatures=Common}]{plex-otf}
+### Docx output format
+  docx:
+    toc: true
+    number-sections: true
+    toc-depth: 2
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы.
-Формулировки цели для каждой лабораторной работы приведены в методических указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по лабораторным работам.
-Модифицируя данный шаблон, студенты смогут без труда подготовить отчёт по лабораторным работам, а также познакомиться с основными возможностями разметки Markdown.
+Основная цель работы -- освоить синтаксис языка Julia для построения графиков.
 
 # Задание
 
-Здесь приводится описание задания в соответствии с рекомендациями методического пособия и выданным вариантом.
+1. Используя JupyterLab, повторите примерыи. При этом дополните графики
+обозначениями осей координат, легендой с названиями траекторий, названиями
+графиков и т.п.
 
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в [табл. @tbl-std-dir] приведено краткое описание стандартных каталогов Unix.
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl-std-dir}
-
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
+2. Выполните задания для самостоятельной работы.
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию ([рис. @fig-001]).
+Выполним примеры из лабораторной работы для знакомства с пакетами по отрисовки графиков и их функциями ([@fig-001]-[@fig-019]).
 
-![V Сольвеевский конгресс (1927) «Электроны и фотоны»](image/solvay.jpg){#fig-001 width=70%}
+![Опции при построении графика](image/1.png){#fig-001 width=70%}
+
+![Опции при построении графика](image/2.png){#fig-002 width=70%}
+
+![Опции при построении графика](image/3.png){#fig-003 width=70%}
+
+![Точечный график](image/4.png){#fig-004 width=70%}
+
+![Аппроксимация данных. Полярные координаты](image/5.png){#fig-005 width=70%}
+
+![График поверхности](image/6.png){#fig-006 width=70%}
+
+![Линии уровня](image/7.png){#fig-007 width=70%}
+
+![Векторные поля](image/8.png){#fig-008 width=70%}
+
+![Анимация](image/9.png){#fig-009 width=70%}
+
+![Гипоциклоида](image/10.png){#fig-010 width=70%}
+
+![Errorbars](image/11.png){#fig-011 width=70%}
+
+![Errorbars](image/12.png){#fig-012 width=70%}
+
+![Использование пакета Distributions](image/13.png){#fig-013 width=70%}
+
+![Подграфики](image/14.png){#fig-014 width=70%}
+
+## Задания для самостоятельного выполнения
+
+Выполним задания ([@fig-015]-[@fig-028]).
+
+![Задание №1 и №2](image/15.png){#fig-015 width=70%}
+
+![Задание №3](image/16.png){#fig-016 width=70%}
+
+![Задание №4](image/17.png){#fig-017 width=70%}
+
+![Задание №5](image/18.png){#fig-018 width=70%}
+
+![Задание №6](image/19.png){#fig-019 width=70%}
+
+![Задание №7](image/20.png){#fig-020 width=70%}
+
+![Задание №8](image/21.png){#fig-021 width=70%}
+
+![Задание №9](image/22.png){#fig-022 width=70%}
+
+![Задание №10](image/23.png){#fig-024 width=70%}
+
+![Задание №11](image/24.png){#fig-026 width=70%}
 
 # Выводы
 
-Здесь кратко описываются итоги проделанной работы.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
+В ходе выполнения лабораторной работы я освоила синтаксис языка Julia для построения графиков.
